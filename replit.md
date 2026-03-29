@@ -48,6 +48,20 @@ Every package extends `tsconfig.base.json` which sets `composite: true`. The roo
 - `pnpm run build` — runs `typecheck` first, then recursively runs `build` in all packages that define it
 - `pnpm run typecheck` — runs `tsc --build --emitDeclarationOnly` using project references
 
+## Artifacts
+
+### `artifacts/body-by-olga` (`@workspace/body-by-olga`)
+
+Body by Olga — a fully static React + Vite site for a women's fitness platform (40+). No backend needed.
+
+- **Pages**: Home (`/`), Coaching (`/coaching`), Blog (`/blog`), Blog Post (`/blog/:slug`)
+- **Design**: Warm Athletic design system (Playfair Display + DM Sans, #FF6A2B orange, #2F5D62 teal, #F7F4EF linen)
+- **Features**: 3D flip cards with hover/tap support, scroll reveal animations, sticky glassmorphism nav, blog category filtering
+- **Images**: All 14 hero/flip card images live in `public/images/`
+- **Styles**: Custom CSS (no Tailwind) in `src/styles.css`
+- **Brand skill**: `.claude/skills/body-by-olga-brand/SKILL.md`
+- **Future**: Decap CMS integration for blog, GoHighLevel form integration for coaching apply
+
 ## Packages
 
 ### `artifacts/api-server` (`@workspace/api-server`)
