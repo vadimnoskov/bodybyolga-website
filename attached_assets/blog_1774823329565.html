@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The Strength After 40 Blog — evidence-based training, nutrition, and mindset for women who refuse to get weaker.">
+<title>Blog — Body by Olga</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#FF6A2B;--primary-hover:#E85A1F;--primary-light:#FFF0E9;--accent:#2F5D62;--accent-light:#E8F4F0;--text:#1A1A1A;--text-secondary:#555;--text-muted:#999;--bg:#F7F4EF;--bg-card:#FFF;--bg-alt:#F0EBE3;--border:#E8E1D7;--border-light:#F0EBE3;--font-display:'Playfair Display',Georgia,serif;--font-body:'DM Sans',-apple-system,sans-serif;--radius:16px;--radius-sm:10px;--radius-pill:50px}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}body{font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.65;overflow-x:hidden}img{max-width:100%;display:block}a{text-decoration:none;color:inherit}button{font-family:var(--font-body);cursor:pointer;border:none}
+.container{max-width:1120px;margin:0 auto;padding:0 32px}@media(max-width:640px){.container{padding:0 20px}}
+.r{opacity:0;transform:translateY(24px);transition:opacity .65s cubic-bezier(.2,.8,.3,1),transform .65s cubic-bezier(.2,.8,.3,1)}.r.v{opacity:1;transform:none}.r-d1{transition-delay:.08s}.r-d2{transition-delay:.16s}.r-d3{transition-delay:.24s}
+
+/* Nav (same as index) */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(247,244,239,.85);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);transition:box-shadow .3s}
+.nav.scrolled{box-shadow:0 1px 0 var(--border)}
+.nav-inner{max-width:1120px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-logo{font-family:var(--font-display);font-size:18px;font-weight:700;color:var(--text)}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-links a{font-size:14px;font-weight:500;color:var(--text-muted);transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.nav-cta{background:var(--primary);color:#fff!important;font-size:13px;font-weight:600;padding:9px 20px;border-radius:var(--radius-sm);transition:background .2s}
+.nav-cta:hover{background:var(--primary-hover)}
+.nav-coaching{font-size:13px;font-weight:500;color:var(--text-muted);transition:color .2s}
+.nav-coaching:hover{color:var(--accent)}
+.nav-toggle{display:none;background:none;width:28px;height:28px;flex-direction:column;align-items:center;justify-content:center;gap:5px}
+.nav-toggle span{display:block;width:20px;height:1.5px;background:var(--text)}
+@media(max-width:768px){.nav-inner{padding:0 20px}.nav-links{display:none}.nav-toggle{display:flex}.nav-links.open{display:flex;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:var(--bg);padding:28px 20px;gap:16px;border-bottom:1px solid var(--border)}}
+
+/* Blog header */
+.blog-hero{padding:120px 0 60px;text-align:center}
+.blog-hero h1{font-family:var(--font-display);font-size:clamp(32px,4vw,44px);color:var(--text);margin-bottom:12px}
+.blog-hero p{font-size:16px;color:var(--text-muted);max-width:500px;margin:0 auto 32px}
+.blog-tags{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.blog-tag{font-size:13px;font-weight:500;color:var(--text-secondary);background:var(--bg-card);border:1px solid var(--border);padding:6px 16px;border-radius:var(--radius-pill);transition:all .2s;cursor:pointer}
+.blog-tag:hover,.blog-tag.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+/* Blog grid */
+.blog-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;padding-bottom:120px}
+.blog-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:transform .3s,box-shadow .3s}
+.blog-card:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,0,0,.06)}
+.blog-card-img{aspect-ratio:16/9;background:var(--bg-alt)}
+.blog-card-body{padding:28px 24px}
+.blog-card-tag{font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--primary);margin-bottom:10px}
+.blog-card h3{font-family:var(--font-display);font-size:20px;color:var(--text);margin-bottom:10px;line-height:1.35}
+.blog-card p{font-size:14px;color:var(--text-secondary);line-height:1.7;margin-bottom:16px}
+.blog-card .read-more{font-size:13px;font-weight:600;color:var(--primary);display:inline-flex;align-items:center;gap:6px;transition:gap .2s}
+.blog-card:hover .read-more{gap:10px}
+
+/* CTA bar */
+.blog-cta-bar{background:var(--accent);padding:40px;border-radius:var(--radius);text-align:center;margin-bottom:80px}
+.blog-cta-bar p{color:rgba(255,255,255,.8);font-size:16px;margin-bottom:16px}
+.blog-cta-bar .btn{background:var(--primary);color:#fff;padding:12px 28px;font-size:14px;font-weight:600;border-radius:var(--radius-sm);display:inline-flex;transition:background .2s}
+.blog-cta-bar .btn:hover{background:var(--primary-hover)}
+
+@media(max-width:768px){.blog-grid{grid-template-columns:1fr}}
+
+/* Footer */
+.footer{background:var(--text);color:#fff;padding:64px 0 28px}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.footer-logo{font-family:var(--font-display);font-size:18px;font-weight:700;color:var(--primary);margin-bottom:12px}
+.footer-tagline{font-size:14px;color:rgba(255,255,255,.4);line-height:1.7;max-width:280px}
+.footer-col-title{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:16px}
+.footer-links{display:flex;flex-direction:column;gap:10px}
+.footer-links a{font-size:14px;color:rgba(255,255,255,.55);transition:color .2s}
+.footer-links a:hover{color:#fff}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:20px;display:flex;justify-content:space-between;align-items:center}
+.footer-copy{font-size:12px;color:rgba(255,255,255,.2)}
+@media(max-width:768px){.footer-grid{grid-template-columns:1fr;gap:28px}.footer-bottom{flex-direction:column;gap:12px;text-align:center}}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Body by Olga</a>
+    <div class="nav-links" id="navLinks">
+      <a href="/#method">The Method</a>
+      <a href="/#results">Results</a>
+      <a href="blog.html" style="color:var(--text)">Blog</a>
+      <a href="/#pricing" class="nav-cta">Start Free Trial</a>
+      <a href="coaching.html" class="nav-coaching">Coaching</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<section class="blog-hero">
+  <div class="container">
+    <h1 class="r">The Blog</h1>
+    <p class="r r-d1">Evidence-based training, nutrition, and mindset for women who refuse to get weaker.</p>
+    <div class="blog-tags r r-d2">
+      <span class="blog-tag active">All</span>
+      <span class="blog-tag">Training</span>
+      <span class="blog-tag">Nutrition</span>
+      <span class="blog-tag">Mindset</span>
+      <span class="blog-tag">Perimenopause</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="blog-cta-bar r">
+      <p>New here? Start your 7-day free trial and train with me today.</p>
+      <a href="/#pricing" class="btn">Start Free Trial</a>
+    </div>
+
+    <div class="blog-grid">
+      <a href="blog-post.html" class="blog-card r">
+        <div class="blog-card-img"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-tag">Training</div>
+          <h3>Why Strength Training After 40 Changes Everything</h3>
+          <p>The science behind why resistance training becomes non-negotiable for women in midlife — and how to start.</p>
+          <span class="read-more">Read more →</span>
+        </div>
+      </a>
+      <a href="blog-post.html" class="blog-card r r-d1">
+        <div class="blog-card-img"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-tag">Training</div>
+          <h3>How to Start Lifting Weights at 45</h3>
+          <p>A no-nonsense beginner's guide for women who've never touched a dumbbell — or haven't in years.</p>
+          <span class="read-more">Read more →</span>
+        </div>
+      </a>
+      <a href="blog-post.html" class="blog-card r">
+        <div class="blog-card-img"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-tag">Nutrition</div>
+          <h3>Why Cardio Stops Working After 40</h3>
+          <p>You're running more and losing less. Here's what's actually happening — and what to do instead.</p>
+          <span class="read-more">Read more →</span>
+        </div>
+      </a>
+      <a href="blog-post.html" class="blog-card r r-d1">
+        <div class="blog-card-img"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-tag">Mindset</div>
+          <h3>The 30-Minute Workout Strategy</h3>
+          <p>Why less time in the gym leads to better results — especially for busy women over 40.</p>
+          <span class="read-more">Read more →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="footer-logo">Body by Olga</div><p class="footer-tagline">Simple, effective strength training for women over 40.</p></div>
+      <div><div class="footer-col-title">Navigate</div><div class="footer-links"><a href="/">Home</a><a href="blog.html">Blog</a><a href="/#results">Results</a><a href="/#pricing">Start Free Trial</a><a href="coaching.html">Coaching</a></div></div>
+      <div><div class="footer-col-title">Connect</div><div class="footer-links"><a href="https://www.instagram.com/olganoskov/" target="_blank">Instagram</a><a href="#">YouTube</a><a href="mailto:hello@bodybyolga.app">hello@bodybyolga.app</a></div></div>
+    </div>
+    <div class="footer-bottom"><span class="footer-copy">&copy; 2026 Body by Olga. All rights reserved.</span></div>
+  </div>
+</footer>
+
+<script>
+const obs=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting)e.target.classList.add('v')})},{threshold:.08,rootMargin:'0px 0px -32px 0px'});document.querySelectorAll('.r').forEach(e=>obs.observe(e));
+const nav=document.getElementById('nav');addEventListener('scroll',()=>{nav.classList.toggle('scrolled',scrollY>8)},{passive:true});
+document.getElementById('navToggle').addEventListener('click',()=>document.getElementById('navLinks').classList.toggle('open'));
+</script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+## THE PROMPT (copy from here)
+ 
+Build me a static website with an integrated blog and CMS admin panel. I have 4 existing HTML files that contain the complete design — don't change any copy, colors, fonts, or styling. This is a conversion, not a redesign.
+ 
+### What I need:
+ 
+**1. A static site with these pages:**
+- Homepage (from the attached index.html — this has 3D flip cards, scroll animations, sticky nav, the works)
+- Coaching page (from the attached coaching.html)
+- Blog listing page (from the attached blog.html)
+- Individual blog post pages (template from the attached blog-post.html)
+ 
+**2. A shared component system:**
+- The <nav> is identical across all 4 HTML files — extract it into a reusable component
+- The <footer> is identical across all files — extract it into a reusable component
+- The CSS (everything inside the <style> tag in index.html) is the complete design system — extract it into a global stylesheet
+- The <script> block before </body> in index.html handles scroll reveal, nav scroll, mobile nav, smooth scroll, and flip card tap — this should be shared across all pages
+ 
+**3. A Markdown-based blog:**
+- Blog posts should be written as Markdown files with frontmatter (title, description, date, category, image)
+- The blog listing page should automatically show all published posts, sorted newest first
+- Posts with a future date should be hidden until that date arrives (for scheduled publishing)
+- Each Markdown file should automatically become a page at /blog/[post-name]
+ 
+**4. Decap CMS (formerly Netlify CMS) for blog management:**
+- Set up Decap CMS at /admin so I can write and manage blog posts through a visual editor
+- Configure it to save posts as Markdown files to the blog content directory
+- Fields needed: title, description, publish date, category (dropdown: Science, Workouts, Nutrition, Mindset, Lifestyle), featured image, body (rich text)
+- Authentication through GitHub (I'll connect this when I deploy to Netlify)
+ 
+**5. Deployment-ready for Netlify:**
+- The build output should be static HTML files
+- Include a netlify.toml or equivalent config
+- The site URL will be https://bodybyolga.app
+ 
+### Brand guidelines:
+ 
+I've attached a SKILL.md file with the complete brand design system. Save it at .claude/skills/body-by-olga-brand/SKILL.md in the project. Key points:
+- Fonts: Playfair Display (headlines) + DM Sans (body) from Google Fonts
+- Colors: Orange #FF6A2B (CTAs), Teal #2F5D62 (accent), Warm linen #F7F4EF (background)
+- Tone: Calm, intelligent, warm. Think Apple, not fitness influencer energy.
+- DO NOT change any copy, headlines, section order, or styling from the HTML files
+ 
+### Technical requirements:
+- Use whatever static site framework works best in Replit (Astro, Eleventy, Hugo, or even plain HTML with a build step — your choice)
+- The flip cards use CSS 3D transforms (perspective, rotateY) — make sure these survive the conversion
+- Mobile: flip cards trigger on tap instead of hover (≤1024px) with auto-close behavior
+- Internal links should use clean paths (/blog, /coaching) not .html extensions
+- Include proper meta tags, Open Graph tags, and a sitemap
+ 
+### Image handling:
+- I've attached some images. Put them in the appropriate public/static directory
+- Blog post images will go in a /images/blog/ subdirectory
+- Flip card back images go in /images/flip/ or similar
+ 
+### Create one sample blog post:
+Title: "Why Strength Training Matters More After 40"
+Description: "The science behind why your body needs strength — not more cardio — as you enter midlife."
+Date: 2026-04-01
+Category: Science
+Body: Write 3-4 paragraphs about muscle loss after 40, why cardio alone isn't enough, and how 30-minute dumbbell workouts help. Keep the tone warm, evidence-informed, not preachy. Match the brand voice from the SKILL.md.
+ 
+### What NOT to do:
+- Don't redesign anything — this is a conversion of existing, approved HTML
+- Don't change fonts to Inter, Roboto, or any generic sans-serif
+- Don't use purple gradients or generic "AI" aesthetics
+- Don't add pop-ups, modals, or aggressive CTAs
+- Don't change the section order on the homepage
+- Don't remove the flip card functionality

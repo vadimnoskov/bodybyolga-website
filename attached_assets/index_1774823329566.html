@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Body by Olga — strength training, food awareness, and consistency coaching for women 40+ who are done starting over. 30-minute home workouts. Start your free trial.">
+<title>Body by Olga — Strength After 40</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary:#FF6A2B;--primary-hover:#E85A1F;--primary-light:#FFF0E9;
+  --accent:#2F5D62;--accent-hover:#244A4E;--accent-light:#E8F4F0;
+  --text:#1A1A1A;--text-s:#555;--text-m:#999;
+  --bg:#F7F4EF;--bg-card:#FFF;--bg-alt:#F0EBE3;
+  --border:#E8E1D7;--border-l:#F0EBE3;
+  --fd:'Playfair Display',Georgia,serif;
+  --fb:'DM Sans',-apple-system,sans-serif;
+  --r:16px;--rs:10px;--rp:50px;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:var(--fb);background:var(--bg);color:var(--text);line-height:1.65;overflow-x:hidden}
+img{max-width:100%;display:block}a{text-decoration:none;color:inherit}
+button{font-family:var(--fb);cursor:pointer;border:none}
+.ctn{max-width:1120px;margin:0 auto;padding:0 32px}
+@media(max-width:640px){.ctn{padding:0 20px}}
+.sp{padding:120px 0}@media(max-width:768px){.sp{padding:80px 0}}
+.r{opacity:0;transform:translateY(20px);transition:opacity .6s cubic-bezier(.2,.8,.3,1),transform .6s cubic-bezier(.2,.8,.3,1)}
+.r.v{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}
+
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;border-radius:var(--rs);transition:background .2s,transform .1s,box-shadow .2s}
+.btn:active{transform:scale(.98)}
+.btn-p{background:var(--primary);color:#fff;padding:14px 32px;font-size:15px;box-shadow:0 4px 16px rgba(255,106,43,.25)}
+.btn-p:hover{background:var(--primary-hover);box-shadow:0 6px 24px rgba(255,106,43,.35)}
+.btn-s{background:none;color:var(--text-s);padding:14px 24px;font-size:15px}
+.btn-s:hover{color:var(--text)}
+.btn-g{background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);padding:12px 24px;font-size:14px;border:1px solid rgba(255,255,255,.12)}
+.btn-g:hover{background:rgba(255,255,255,.14);color:#fff}
+.arr{transition:transform .2s}.btn:hover .arr{transform:translateX(3px)}
+
+/* ── NAV ──────────────────────────────────────────────── */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(247,244,239,.88);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);transition:box-shadow .3s}
+.nav.scrolled{box-shadow:0 1px 0 var(--border)}
+.ni{max-width:1120px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nl{font-family:var(--fd);font-size:18px;font-weight:700;color:var(--text)}
+.nk{display:flex;align-items:center;gap:28px}
+.nk a{font-size:14px;font-weight:500;color:var(--text-m);transition:color .2s}
+.nk a:hover{color:var(--text)}
+.nc{background:var(--primary);color:#fff!important;font-size:13px;font-weight:600;padding:9px 20px;border-radius:var(--rs);transition:background .2s}
+.nc:hover{background:var(--primary-hover)}
+.nq{font-size:13px;font-weight:500;color:var(--text-m)!important}
+.nq:hover{color:var(--accent)!important}
+.nt{display:none;background:none;width:28px;height:28px;flex-direction:column;align-items:center;justify-content:center;gap:5px}
+.nt span{display:block;width:20px;height:1.5px;background:var(--text)}
+@media(max-width:768px){.ni{padding:0 20px}.nk{display:none}.nt{display:flex}.nk.open{display:flex;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:var(--bg);padding:28px 20px;gap:16px;border-bottom:1px solid var(--border)}}
+
+/* ── HERO ─────────────────────────────────────────────── */
+.hero{padding:140px 0 100px;min-height:85vh;display:flex;align-items:center}
+.hero-g{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.hero-ey{font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
+.hero h1{font-family:var(--fd);font-size:clamp(36px,4.5vw,52px);line-height:1.12;color:var(--text);margin-bottom:24px}
+.hero h1 em{color:var(--primary);font-style:italic;display:block}
+.hero-sub{font-size:17px;line-height:1.75;color:var(--text-s);max-width:440px;margin-bottom:36px}
+.hero-a{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.hero-img{width:100%;aspect-ratio:4/5;border-radius:var(--r);overflow:hidden;background:var(--bg-alt)}
+.hero-img img{width:100%;height:100%;object-fit:cover}
+@media(max-width:900px){.hero{min-height:auto;padding:110px 0 60px}.hero-g{grid-template-columns:1fr;gap:48px}.hero-g>div:last-child{max-width:400px;margin:0 auto;order:-1}}
+
+/* ── PROOF ────────────────────────────────────────────── */
+.proof{padding:40px 0;border-top:1px solid var(--border-l);border-bottom:1px solid var(--border-l)}
+.proof-l{font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-m);text-align:center;margin-bottom:24px}
+.proof-r{display:flex;align-items:center;justify-content:center;gap:48px;flex-wrap:wrap}
+.proof-r span{font-family:var(--fd);font-size:16px;font-weight:700;color:var(--text);opacity:.15;letter-spacing:1.5px;text-transform:uppercase;user-select:none}
+
+/* ══════════════════════════════════════════════════════
+   FLIP CARD SYSTEM
+   ══════════════════════════════════════════════════════ */
+.flip-card{perspective:1000px;cursor:pointer}
+.flip-inner{position:relative;width:100%;height:100%;transition:transform .6s cubic-bezier(.4,.2,.2,1);transform-style:preserve-3d}
+.flip-card:hover .flip-inner,.flip-card.tapped .flip-inner{transform:rotateY(180deg)}
+.flip-front,.flip-back{position:absolute;top:0;left:0;width:100%;height:100%;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:var(--r);overflow:hidden}
+.flip-front{z-index:2}
+.flip-back{transform:rotateY(180deg);z-index:1}
+.flip-back img{width:100%;height:100%;object-fit:cover}
+.flip-back-overlay{position:absolute;bottom:0;left:0;right:0;padding:20px;background:linear-gradient(transparent,rgba(0,0,0,.55));color:#fff}
+.flip-back-overlay span{font-size:13px;font-weight:600}
+.flip-hint{position:absolute;bottom:10px;right:12px;font-size:10px;color:var(--text-m);opacity:.5;z-index:3;pointer-events:none;transition:opacity .3s}
+.flip-card:hover .flip-hint{opacity:0}
+
+/* ── RECOGNITION FLIP CARDS ───────────────────────────── */
+.recog{background:var(--bg-card);border-top:1px solid var(--border-l)}
+.recog-h{text-align:center;max-width:580px;margin:0 auto 56px}
+.recog-h h2{font-family:var(--fd);font-size:clamp(26px,3vw,34px);line-height:1.3}
+.recog-g{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.recog-flip{height:340px}
+.recog-front{background:var(--bg);border-radius:var(--r);padding:36px 28px;display:flex;flex-direction:column;justify-content:center}
+.recog-front p{font-size:15px;color:var(--text-s);line-height:1.75}
+.recog-front p+p{margin-top:14px}
+.recog-front .em{font-family:var(--fd);font-size:17px;font-style:italic;color:var(--accent);line-height:1.55}
+@media(max-width:768px){.recog-g{grid-template-columns:1fr}.recog-flip{height:300px}}
+
+/* ── PHILOSOPHY ───────────────────────────────────────── */
+.philo{background:var(--accent);position:relative;overflow:hidden}
+.philo::after{content:'';position:absolute;bottom:-120px;right:-80px;width:400px;height:400px;background:radial-gradient(circle,rgba(255,106,43,.1),transparent 70%);pointer-events:none}
+.philo-in{max-width:700px;margin:0 auto;position:relative;z-index:1}
+.philo h2{font-family:var(--fd);font-size:clamp(26px,3vw,34px);line-height:1.35;color:#fff;margin-bottom:32px;text-align:center}
+.philo h2 em{color:var(--primary);font-style:italic}
+.philo-cols{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.philo-col h3{font-size:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:12px}
+.philo-col p{font-size:15px;color:rgba(255,255,255,.75);line-height:1.75}
+.philo-col p+p{margin-top:12px}
+@media(max-width:640px){.philo-cols{grid-template-columns:1fr}}
+
+/* ── METHOD FLIP CARDS ────────────────────────────────── */
+.system-h{text-align:center;margin-bottom:56px}
+.system-h h2{font-family:var(--fd);font-size:clamp(26px,3vw,34px);color:var(--text);margin-bottom:8px}
+.system-h p{font-size:16px;color:var(--text-m)}
+.system-g{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.method-flip{height:360px}
+.method-front{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r);padding:32px 24px;display:flex;flex-direction:column;justify-content:flex-start}
+.sys-n{font-size:11px;font-weight:700;letter-spacing:1.5px;color:var(--primary);margin-bottom:14px}
+.method-front h3{font-family:var(--fd);font-size:20px;color:var(--text);margin-bottom:10px;line-height:1.3}
+.method-front p{font-size:14px;color:var(--text-s);line-height:1.7}
+@media(max-width:900px){.system-g{grid-template-columns:1fr 1fr}.method-flip{height:320px}}
+@media(max-width:560px){.system-g{grid-template-columns:1fr}.method-flip{height:300px}}
+
+/* ── APP FEATURE FLIP CARDS ───────────────────────────── */
+.app-s{background:var(--bg-card);border-top:1px solid var(--border-l)}
+.app-h{text-align:center;margin-bottom:48px}
+.app-h h2{font-family:var(--fd);font-size:clamp(26px,3vw,34px);color:var(--text);margin-bottom:8px}
+.app-h p{font-size:16px;color:var(--text-m);max-width:480px;margin:0 auto}
+.app-g{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.app-flip{height:300px}
+.app-front{background:var(--bg);border-radius:var(--r);padding:28px 24px;display:flex;flex-direction:column;justify-content:flex-start}
+.app-i{width:40px;height:40px;border-radius:var(--rs);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.app-i.o{background:var(--primary-light);color:var(--primary)}
+.app-i.t{background:var(--accent-light);color:var(--accent)}
+.app-front h4{font-size:15px;font-weight:700;color:var(--text);margin-bottom:5px}
+.app-front p{font-size:13px;color:var(--text-m);line-height:1.6}
+.app-back{background:var(--bg-alt);display:flex;align-items:center;justify-content:center;padding:16px}
+.app-back img{width:100%;height:100%;object-fit:contain;border-radius:8px}
+@media(max-width:768px){.app-g{grid-template-columns:1fr 1fr}.app-flip{height:280px}}
+@media(max-width:480px){.app-g{grid-template-columns:1fr}.app-flip{height:320px}}
+
+/* ── MEET OLGA ────────────────────────────────────────── */
+.meet-g{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.meet-v{aspect-ratio:16/10;border-radius:var(--r);background:linear-gradient(135deg,var(--bg-alt),var(--accent-light));display:flex;align-items:center;justify-content:center;cursor:pointer;transition:transform .3s}
+.meet-v:hover{transform:scale(1.01)}
+.play{width:64px;height:64px;border-radius:50%;background:var(--primary);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(255,106,43,.3);transition:transform .2s}
+.meet-v:hover .play{transform:scale(1.06)}
+.meet h2{font-family:var(--fd);font-size:30px;color:var(--text);margin-bottom:20px}
+.meet p{font-size:16px;color:var(--text-s);line-height:1.8;margin-bottom:14px}
+.meet .creds{font-size:13px;color:var(--text-m);border-top:1px solid var(--border-l);padding-top:16px;margin:20px 0 24px;line-height:1.7}
+@media(max-width:900px){.meet-g{grid-template-columns:1fr;gap:40px}}
+
+/* ── TESTIMONIALS ─────────────────────────────────────── */
+.testi{background:var(--bg-card);border-top:1px solid var(--border-l)}
+.testi-h{text-align:center;margin-bottom:48px}
+.testi-h h2{font-family:var(--fd);font-size:clamp(26px,3vw,34px);color:var(--text);margin-bottom:8px}
+.testi-h p{color:var(--text-m)}
+.testi-g{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.testi-c{background:var(--bg);border-radius:var(--r);padding:32px 28px;transition:transform .3s}
+.testi-c:hover{transform:translateY(-2px)}
+.testi-q{font-family:var(--fd);font-size:18px;font-style:italic;color:var(--text);line-height:1.5;margin-bottom:14px}
+.testi-s{font-size:14px;color:var(--text-s);line-height:1.7;margin-bottom:16px}
+.testi-a{font-size:14px;font-weight:600;color:var(--text)}
+@media(max-width:768px){.testi-g{grid-template-columns:1fr}}
+
+/* ── PRICING ──────────────────────────────────────────── */
+.price-h{text-align:center;margin-bottom:48px}
+.price-h h2{font-family:var(--fd);font-size:clamp(26px,3vw,34px);color:var(--text);margin-bottom:8px}
+.price-h p{color:var(--text-m)}
+.price-g{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:640px;margin:0 auto}
+.pc{border-radius:var(--r);padding:40px 32px;text-align:center;position:relative;transition:transform .3s}
+.pc:hover{transform:translateY(-3px)}
+.pc.std{background:var(--bg-card);border:1px solid var(--border)}
+.pc.feat{background:var(--primary);color:#fff;box-shadow:0 12px 40px rgba(255,106,43,.2)}
+.pb{position:absolute;top:-11px;left:50%;transform:translateX(-50%);font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 16px;border-radius:var(--rp);background:var(--text);color:#fff;white-space:nowrap}
+.pl{font-size:14px;font-weight:600;margin-bottom:8px}
+.pa{font-size:44px;font-weight:700;line-height:1.1}
+.pp{font-size:14px;margin-bottom:8px}
+.pc.std .pp{color:var(--text-m)}.pc.feat .pp{color:rgba(255,255,255,.6)}
+.pbo{font-size:13px;font-weight:600;margin-bottom:20px}
+.pc.std .pbo{color:var(--primary)}.pc.feat .pbo{color:rgba(255,255,255,.9)}
+.pf{list-style:none;text-align:left;margin-bottom:28px}
+.pf li{display:flex;align-items:flex-start;gap:10px;font-size:14px;padding:5px 0}
+.pc.std .pf li{color:var(--text-s)}.pc.feat .pf li{color:rgba(255,255,255,.85)}
+.pk{width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.pc.std .pk{background:var(--accent-light);color:var(--accent)}.pc.feat .pk{background:rgba(255,255,255,.18);color:#fff}
+.pbtn{width:100%;font-size:15px;font-weight:600;padding:14px;border-radius:var(--rs);transition:background .2s}
+.pc.std .pbtn{background:var(--bg-alt);color:var(--text)}.pc.std .pbtn:hover{background:var(--border)}
+.pc.feat .pbtn{background:#fff;color:var(--primary)}.pc.feat .pbtn:hover{background:#f5f5f5}
+@media(max-width:560px){.price-g{grid-template-columns:1fr;max-width:360px}}
+
+/* ── FINAL CTA ────────────────────────────────────────── */
+.fcta{background:var(--accent);text-align:center;position:relative;overflow:hidden}
+.fcta::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(255,106,43,.08),transparent 70%)}
+.fcta h2{font-family:var(--fd);font-size:clamp(28px,3.5vw,40px);color:#fff;margin-bottom:16px;position:relative;z-index:1}
+.fcta p{font-size:16px;color:rgba(255,255,255,.6);margin-bottom:32px;position:relative;z-index:1}
+.fcta-a{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
+
+/* ── FOOTER ───────────────────────────────────────────── */
+.ft{background:var(--text);color:#fff;padding:64px 0 28px}
+.ft-g{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.ft-logo{font-family:var(--fd);font-size:18px;font-weight:700;color:var(--primary);margin-bottom:12px}
+.ft-tag{font-size:14px;color:rgba(255,255,255,.4);line-height:1.7;max-width:280px}
+.ft-ct{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:16px}
+.ft-lk{display:flex;flex-direction:column;gap:10px}
+.ft-lk a{font-size:14px;color:rgba(255,255,255,.55);transition:color .2s}
+.ft-lk a:hover{color:#fff}
+.ft-b{border-top:1px solid rgba(255,255,255,.06);padding-top:20px;display:flex;justify-content:space-between;align-items:center}
+.ft-c{font-size:12px;color:rgba(255,255,255,.2)}
+.ft-so{display:flex;gap:16px}
+.ft-so a{color:rgba(255,255,255,.35);transition:color .2s}
+.ft-so a:hover{color:#fff}
+@media(max-width:768px){.ft-g{grid-template-columns:1fr;gap:28px}.ft-b{flex-direction:column;gap:12px;text-align:center}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="ni">
+    <a href="/" class="nl">Body by Olga</a>
+    <div class="nk" id="nk">
+      <a href="#method">The Method</a>
+      <a href="#results">Results</a>
+      <a href="blog.html">Blog</a>
+      <a href="#pricing" class="nc">Start Free Trial</a>
+      <a href="coaching.html" class="nq">Coaching</a>
+    </div>
+    <button class="nt" id="nt" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="ctn">
+    <div class="hero-g">
+      <div>
+        <p class="hero-ey r">Strength After 40</p>
+        <h1 class="r d1">Stop getting weaker.<br><em>Start here.</em></h1>
+        <p class="hero-sub r d2">You've solved harder problems than this. 30-minute home workouts, food awareness, and coaching support for women 40+ who are done starting over.</p>
+        <div class="hero-a r d3">
+          <a href="#pricing" class="btn btn-p">Start Your 7-Day Free Trial <svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+          <a href="#method" class="btn btn-s">See how it works</a>
+        </div>
+      </div>
+      <div class="r d2">
+        <div class="hero-img">
+          <img src="img/hero-image.png" alt="Olga training with dumbbells">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section class="proof r">
+  <div class="ctn">
+    <p class="proof-l">Featured In</p>
+    <div class="proof-r">
+      <span>Self</span><span>Vogue</span><span>Cosmopolitan</span><span>New York Post</span><span>USA Today</span>
+    </div>
+  </div>
+</section>
+
+<!-- RECOGNITION — FLIP CARDS -->
+<section class="recog sp">
+  <div class="ctn">
+    <div class="recog-h r">
+      <h2>You know what to do. You just can't make it stick.</h2>
+    </div>
+    <div class="recog-g">
+
+      <div class="flip-card recog-flip r">
+        <div class="flip-inner">
+          <div class="flip-front recog-front">
+            <p>You've managed a career, a family, and more responsibility than most people can imagine.</p>
+            <p>But your body feels like the one area where you keep losing ground. You start strong. Then stress hits, the week falls apart, and you're back to square one.</p>
+            <span class="flip-hint">hover to flip</span>
+          </div>
+          <div class="flip-back">
+            <img src="img/Flip_cards_480_x_400_-_1.png" alt="Olga">
+            <div class="flip-back-overlay"><span>You're not starting over. You're starting right.</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card recog-flip r d1">
+        <div class="flip-inner">
+          <div class="flip-front recog-front">
+            <p>You've tried the diets. The apps. The "just be more disciplined" approach.</p>
+            <p>It works for a few weeks. Then the all-or-nothing cycle kicks in and you quit — not because you're lazy, but because the system was never built for your actual life.</p>
+            <span class="flip-hint">hover to flip</span>
+          </div>
+          <div class="flip-back">
+            <img src="img/Flip_cards_480_x_400_-_2.png" alt="Olga with food">
+            <div class="flip-back-overlay"><span>Food is not the enemy.</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card recog-flip r d2">
+        <div class="flip-inner">
+          <div class="flip-front recog-front">
+            <p class="em">What if the problem was never willpower?</p>
+            <p class="em">What if the real issue is the patterns behind the habits — the stress eating, the all-or-nothing thinking, the shame that makes consistency harder?</p>
+            <span class="flip-hint">hover to flip</span>
+          </div>
+          <div class="flip-back">
+            <img src="img/Flip_cards_480_x_400_-_3.png" alt="Olga thinking">
+            <div class="flip-back-overlay"><span>It's the patterns, not you.</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="philo sp" id="philosophy">
+  <div class="ctn">
+    <div class="philo-in r">
+      <h2>This is not another plan.<br>It's a different way of <em>thinking.</em></h2>
+      <div class="philo-cols">
+        <div class="philo-col">
+          <h3>What we believe</h3>
+          <p>Behavior change beats motivation. Systems last. Motivation fades.</p>
+          <p>Exercise is not punishment. Training is for strength, energy, and confidence — not to earn food.</p>
+          <p>Consistency matters more than perfection. A hard week needs adjustments, not quitting. Plan B still counts.</p>
+        </div>
+        <div class="philo-col">
+          <h3>What we do differently</h3>
+          <p>We don't just hand you workouts. We help you understand why you do what you do — the emotional eating patterns, the self-sabotage, the all-or-nothing cycle.</p>
+          <p>We teach food awareness, not rigid dieting. Hunger is data. Fullness matters. Awareness beats rules.</p>
+          <p>This program is built to make healthy habits feel natural again.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE METHOD — FLIP CARDS -->
+<section class="sp" id="method">
+  <div class="ctn">
+    <div class="system-h r">
+      <h2>The Method</h2>
+      <p>Four pillars. One system. Built for real life.</p>
+    </div>
+    <div class="system-g">
+
+      <div class="flip-card method-flip r">
+        <div class="flip-inner">
+          <div class="flip-front method-front">
+            <div class="sys-n">Pillar 01</div>
+            <h3>Functional Strength</h3>
+            <p>Daily 30-minute dumbbell workouts designed for women 40+. Short, effective, progressive. Train at home in the time you actually have.</p>
+            <span class="flip-hint">hover to flip</span>
+          </div>
+          <div class="flip-back">
+            <img src="img/Flip_Card_320_x_380_-_1.png" alt="Olga training">
+            <div class="flip-back-overlay"><span>Functional Strength</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card method-flip r d1">
+        <div class="flip-inner">
+          <div class="flip-front method-front">
+            <div class="sys-n">Pillar 02</div>
+            <h3>Food Awareness</h3>
+            <p>No rigid meal plans. Learn to recognize hunger, understand emotional eating patterns, and build food skills that work in real life.</p>
+            <span class="flip-hint">hover to flip</span>
+          </div>
+          <div class="flip-back">
+            <img src="img/Flip_Card_320_x_380_-_2.png" alt="Olga with food">
+            <div class="flip-back-overlay"><span>Food Awareness</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card method-flip r d2">
+        <div class="flip-inner">
+          <div class="flip-front method-front">
+            <div class="sys-n">Pillar 03</div>
+            <h3>Mindset & Behavior</h3>
+            <p>Address the patterns that keep you stuck — perfectionism, shame, all-or-nothing thinking, and the cycle of starting over every Monday.</p>
+            <span class="flip-hint">hover to flip</span>
+          </div>
+          <div class="flip-back">
+            <img src="img/Flip_Card_320_x_380_-_3.png" alt="Olga mindset">
+            <div class="flip-back-overlay"><span>Mindset & Behavior</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card method-flip r d3">
+        <div class="flip-inner">
+          <div class="flip-front method-front">
+            <div class="sys-n">Pillar 04</div>
+            <h3>Consistency System</h3>
+            <p>Streaks, community, daily structure, and coaching-backed support that makes showing up feel like identity — not willpower.</p>
+            <span class="flip-hint">hover to flip</span>
+          </div>
+          <div class="flip-back">
+            <img src="img/Flip_Card_320_x_380_-_4.png" alt="Olga consistency">
+            <div class="flip-back-overlay"><span>Consistency System</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- INSIDE THE APP — FLIP CARDS -->
+<section class="app-s sp">
+  <div class="ctn">
+    <div class="app-h r">
+      <h2>Inside the App</h2>
+      <p>Everything you need to train, eat with awareness, and stay consistent — in one place.</p>
+    </div>
+    <div class="app-g">
+
+      <div class="flip-card app-flip r">
+        <div class="flip-inner">
+          <div class="flip-front app-front">
+            <div class="app-i o"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+            <h4>Follow-Along Workouts</h4>
+            <p>30-minute strength sessions. Press play and train with Olga.</p>
+            <span class="flip-hint">hover to flip</span>
+          </div>
+          <div class="flip-back app-back">
+            <img src="img/Inside_the_App_320_x_360_-_2.png" alt="Workout screen">
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card app-flip r d1">
+        <div class="flip-inner">
+          <div class="flip-front app-front">
+            <div class="app-i t"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg></div>
+            <h4>Dumbbell-Only Programs</h4>
+            <p>No gym needed. Train at home with a few pairs of dumbbells.</p>
+            <span class="flip-hint">hover to flip</span>
+          </div>
+          <div class="flip-back app-back">
+            <img src="img/Inside_the_App_320_x_360_-_1.png" alt="App home">
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card app-flip r d2">
+        <div class="flip-inner">
+          <div class="flip-front app-front">
+            <div class="app-i o"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z"/><path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/></svg></div>
+            <h4>Nutrition Guidance</h4>
+            <p>Food awareness tools, hunger skills, and meal structure — not calorie obsession.</p>
+            <span class="flip-hint">hover to flip</span>
+          </div>
+          <div class="flip-back app-back">
+            <img src="img/Inside_the_App_320_x_360_-_6.png" alt="Nutrition tracking">
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card app-flip r">
+        <div class="flip-inner">
+          <div class="flip-front app-front">
+            <div class="app-i t"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></div>
+            <h4>Mindset Coaching</h4>
+            <p>Daily prompts that address behavior, emotional eating, and self-sabotage patterns.</p>
+            <span class="flip-hint">hover to flip</span>
+          </div>
+          <div class="flip-back app-back">
+            <img src="img/Inside_the_App_320_x_360_-_3.png" alt="Calendar">
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card app-flip r d1">
+        <div class="flip-inner">
+          <div class="flip-front app-front">
+            <div class="app-i o"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+            <h4>Streaks & Progress</h4>
+            <p>Track workouts, build streaks, and see real evidence that you're getting stronger.</p>
+            <span class="flip-hint">hover to flip</span>
+          </div>
+          <div class="flip-back app-back">
+            <img src="img/Inside_the_App_320_x_360_-_4.png" alt="Streaks">
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card app-flip r d2">
+        <div class="flip-inner">
+          <div class="flip-front app-front">
+            <div class="app-i t"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+            <h4>Community</h4>
+            <p>Women 40+ building strength together. Support, accountability, and shared wins.</p>
+            <span class="flip-hint">hover to flip</span>
+          </div>
+          <div class="flip-back app-back">
+            <img src="img/Inside_the_App_320_x_360_-_5.png" alt="Community">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MEET OLGA -->
+<section class="sp meet">
+  <div class="ctn">
+    <div class="meet-g">
+      <div class="meet-v r"><div class="play"><svg width="24" height="24" viewBox="0 0 24 24" fill="#fff"><polygon points="5 3 19 12 5 21"/></svg></div></div>
+      <div class="r d1">
+        <h2>Hi, I'm Olga.</h2>
+        <p>For most of my 20s I was going through the motions — gaining weight, losing it, never really paying attention to what my body could actually do.</p>
+        <p>That changed when I started training for real. I got stronger than I'd ever been. I trained through both pregnancies, stayed healthy, and never looked back. That was over 18 years ago.</p>
+        <p>Since then I've coached thousands of women — in person at our gym and remotely through the app. The method works because I've lived it, tested it, and refined it with real people for nearly two decades.</p>
+        <p class="creds">18+ years coaching experience · 7,500+ women coached · Strength & functional fitness specialist</p>
+        <a href="#pricing" class="btn btn-p">Start Training With Me <svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testi sp" id="results">
+  <div class="ctn">
+    <div class="testi-h r">
+      <h2>Results</h2>
+      <p>What changes when you stop chasing punishment and start building strength.</p>
+    </div>
+    <div class="testi-g">
+      <div class="testi-c r">
+        <p class="testi-q">"I finally feel strong again."</p>
+        <p class="testi-s">The 30-minute workouts fit my life. The mindset work changed the way I approach food. For the first time, I'm not starting over every Monday.</p>
+        <p class="testi-a">Michelle, 48</p>
+      </div>
+      <div class="testi-c r d1">
+        <p class="testi-q">"Working out is my thing now."</p>
+        <p class="testi-s">I never thought I'd say that at 52. This program made me feel capable again — not exhausted, not sore for days. Just strong and consistent.</p>
+        <p class="testi-a">Janka, 52</p>
+      </div>
+      <div class="testi-c r d2">
+        <p class="testi-q">"My back pain is gone."</p>
+        <p class="testi-s">I came in wanting to lose weight. What I got was so much better — real strength, better energy, and I actually look forward to training now.</p>
+        <p class="testi-a">Victoria, 45</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="sp" id="pricing">
+  <div class="ctn">
+    <div class="price-h r">
+      <h2>Start Inside the App</h2>
+      <p>7-day free trial. Cancel anytime. No pressure.</p>
+    </div>
+    <div class="price-g">
+      <div class="pc std r">
+        <div class="pl">Monthly</div>
+        <div class="pa">$19.99</div>
+        <div class="pp">/month</div>
+        <div class="pbo">&nbsp;</div>
+        <ul class="pf">
+          <li><span class="pk"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>Daily follow-along workouts</li>
+          <li><span class="pk"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>Nutrition guidance</li>
+          <li><span class="pk"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>Mindset coaching</li>
+          <li><span class="pk"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>Community access</li>
+        </ul>
+        <button class="pbtn">Start 7-Day Free Trial</button>
+      </div>
+      <div class="pc feat r d1">
+        <div class="pb">Best Value</div>
+        <div class="pl">Annual</div>
+        <div class="pa">$199</div>
+        <div class="pp">/year</div>
+        <div class="pbo">2 months FREE</div>
+        <ul class="pf">
+          <li><span class="pk"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>Everything in Monthly</li>
+          <li><span class="pk"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>Save 2 months</li>
+          <li><span class="pk"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>Priority support</li>
+        </ul>
+        <button class="pbtn">Start 7-Day Free Trial</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="fcta sp">
+  <div class="ctn">
+    <div class="r">
+      <h2>Get stronger. Eat with awareness.<br>Keep going.</h2>
+      <p>Start with a free trial. No commitment. Cancel anytime.</p>
+      <div class="fcta-a">
+        <a href="#pricing" class="btn btn-p">Start Free Trial</a>
+        <a href="coaching.html" class="btn btn-g">Need more support? Explore coaching</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="ft">
+  <div class="ctn">
+    <div class="ft-g">
+      <div>
+        <div class="ft-logo">Body by Olga</div>
+        <p class="ft-tag">Strength, food skills, and consistency for women 40+. Strength is ageless.</p>
+      </div>
+      <div>
+        <div class="ft-ct">Navigate</div>
+        <div class="ft-lk"><a href="/">Home</a><a href="blog.html">Blog</a><a href="#results">Results</a><a href="#pricing">Start Free Trial</a><a href="coaching.html">Coaching</a></div>
+      </div>
+      <div>
+        <div class="ft-ct">Connect</div>
+        <div class="ft-lk"><a href="https://www.instagram.com/olganoskov/" target="_blank" rel="noopener">Instagram</a><a href="#">YouTube</a><a href="mailto:hello@bodybyolga.app">hello@bodybyolga.app</a></div>
+      </div>
+    </div>
+    <div class="ft-b">
+      <span class="ft-c">&copy; 2026 Body by Olga. All rights reserved.</span>
+      <div class="ft-so">
+        <a href="https://www.instagram.com/olganoskov/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
+        <a href="#" aria-label="YouTube"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal
+const o=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting)e.target.classList.add('v')})},{threshold:.08,rootMargin:'0px 0px -32px 0px'});
+document.querySelectorAll('.r').forEach(e=>o.observe(e));
+
+// Nav scroll
+const n=document.getElementById('nav');
+addEventListener('scroll',()=>{n.classList.toggle('scrolled',scrollY>8)},{passive:true});
+
+// Mobile nav
+document.getElementById('nt').addEventListener('click',()=>document.getElementById('nk').classList.toggle('open'));
+document.getElementById('nk').querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>document.getElementById('nk').classList.remove('open')));
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t)window.scrollTo({top:t.offsetTop-72,behavior:'smooth'})})});
+
+// Mobile flip card tap support
+document.querySelectorAll('.flip-card').forEach(card=>{
+  card.addEventListener('click',function(e){
+    if(window.innerWidth<=1024){
+      // Close all other cards first
+      document.querySelectorAll('.flip-card.tapped').forEach(c=>{
+        if(c!==this)c.classList.remove('tapped');
+      });
+      this.classList.toggle('tapped');
+    }
+  });
+});
+</script>
+
+</body>
+</html>

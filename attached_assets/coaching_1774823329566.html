@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="1:1 coaching with Olga — personalized strength training, nutrition strategy, and behavior change support for women 40+ who want deeper accountability.">
+<title>1:1 Coaching — Body by Olga</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#FF6A2B;--primary-hover:#E85A1F;--primary-light:#FFF0E9;--accent:#2F5D62;--accent-hover:#244A4E;--accent-light:#E8F4F0;--text:#1A1A1A;--text-s:#555;--text-m:#999;--bg:#F7F4EF;--bg-card:#FFF;--bg-alt:#F0EBE3;--border:#E8E1D7;--border-l:#F0EBE3;--fd:'Playfair Display',Georgia,serif;--fb:'DM Sans',-apple-system,sans-serif;--r:16px;--rs:10px;--rp:50px}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}body{font-family:var(--fb);background:var(--bg);color:var(--text);line-height:1.65;overflow-x:hidden}img{max-width:100%;display:block}a{text-decoration:none;color:inherit}button{font-family:var(--fb);cursor:pointer;border:none}
+.ctn{max-width:1120px;margin:0 auto;padding:0 32px}@media(max-width:640px){.ctn{padding:0 20px}}
+.sp{padding:120px 0}@media(max-width:768px){.sp{padding:80px 0}}
+.r{opacity:0;transform:translateY(20px);transition:opacity .6s cubic-bezier(.2,.8,.3,1),transform .6s cubic-bezier(.2,.8,.3,1)}.r.v{opacity:1;transform:none}.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
+
+/* Nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(247,244,239,.88);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);transition:box-shadow .3s}.nav.scrolled{box-shadow:0 1px 0 var(--border)}.ni{max-width:1120px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:64px}.nl{font-family:var(--fd);font-size:18px;font-weight:700;color:var(--text)}.nk{display:flex;align-items:center;gap:28px}.nk a{font-size:14px;font-weight:500;color:var(--text-m);transition:color .2s}.nk a:hover{color:var(--text)}.nc{background:var(--primary);color:#fff!important;font-size:13px;font-weight:600;padding:9px 20px;border-radius:var(--rs);transition:background .2s}.nc:hover{background:var(--primary-hover)}.nq{font-size:13px;font-weight:500;color:var(--text)!important}.nt{display:none;background:none;width:28px;height:28px;flex-direction:column;align-items:center;justify-content:center;gap:5px}.nt span{display:block;width:20px;height:1.5px;background:var(--text)}@media(max-width:768px){.ni{padding:0 20px}.nk{display:none}.nt{display:flex}.nk.open{display:flex;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:var(--bg);padding:28px 20px;gap:16px;border-bottom:1px solid var(--border)}}
+
+/* Hero */
+.ch{padding:140px 0 80px;max-width:640px;margin:0 auto;text-align:center}
+.ch h1{font-family:var(--fd);font-size:clamp(30px,4vw,42px);line-height:1.25;color:var(--text);margin-bottom:20px}
+.ch>p{font-size:17px;color:var(--text-s);line-height:1.75;margin-bottom:12px}
+.ch .note{font-size:15px;color:var(--text-m);font-style:italic;margin-bottom:32px}
+.ch .btn{background:var(--accent);color:#fff;padding:14px 32px;font-size:15px;font-weight:600;border-radius:var(--rs);display:inline-flex;align-items:center;gap:8px;transition:background .2s}.ch .btn:hover{background:var(--accent-hover)}
+
+/* Framing */
+.frame{background:var(--bg-card);border-top:1px solid var(--border-l)}
+.frame-in{max-width:680px;margin:0 auto;text-align:center}
+.frame-in h2{font-family:var(--fd);font-size:28px;color:var(--text);margin-bottom:24px}
+.frame-in p{font-size:16px;color:var(--text-s);line-height:1.8;margin-bottom:14px}
+.frame-in .em{font-family:var(--fd);font-style:italic;color:var(--accent);font-size:18px;margin-top:24px}
+
+/* Who */
+.cw{max-width:720px;margin:0 auto}
+.cw h2{font-family:var(--fd);font-size:28px;color:var(--text);text-align:center;margin-bottom:48px}
+.cw-g{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.cw-c{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r);padding:28px 24px;transition:transform .3s}
+.cw-c:hover{transform:translateY(-2px)}
+.cw-c h4{font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px}
+.cw-c p{font-size:14px;color:var(--text-s);line-height:1.7}
+@media(max-width:640px){.cw-g{grid-template-columns:1fr}}
+
+/* How */
+.chow{background:var(--bg-card);border-top:1px solid var(--border-l)}
+.chow h2{font-family:var(--fd);font-size:28px;color:var(--text);text-align:center;margin-bottom:48px}
+.chow-g{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:720px;margin:0 auto}
+.chow-c{background:var(--bg);border-radius:var(--r);padding:28px 24px}
+.chow-c .num{font-size:11px;font-weight:700;letter-spacing:1.5px;color:var(--accent);margin-bottom:10px}
+.chow-c h4{font-size:16px;font-weight:700;color:var(--text);margin-bottom:6px}
+.chow-c p{font-size:14px;color:var(--text-s);line-height:1.7}
+@media(max-width:640px){.chow-g{grid-template-columns:1fr}}
+
+/* Testimonials */
+.ct{max-width:720px;margin:0 auto}
+.ct h2{font-family:var(--fd);font-size:28px;color:var(--text);text-align:center;margin-bottom:48px}
+.ct-g{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.ct-c{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r);padding:28px 24px}
+.ct-q{font-family:var(--fd);font-size:17px;font-style:italic;color:var(--text);line-height:1.5;margin-bottom:14px}
+.ct-a{font-size:13px;font-weight:600;color:var(--text)}.ct-d{font-size:12px;color:var(--text-m)}
+@media(max-width:640px){.ct-g{grid-template-columns:1fr}}
+
+/* Final CTA */
+.cf{background:var(--accent);text-align:center;position:relative;overflow:hidden}
+.cf::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:500px;height:500px;background:radial-gradient(circle,rgba(255,106,43,.08),transparent 70%)}
+.cf h2{font-family:var(--fd);font-size:clamp(26px,3vw,34px);color:#fff;margin-bottom:16px;position:relative;z-index:1}
+.cf p{font-size:16px;color:rgba(255,255,255,.6);margin-bottom:32px;position:relative;z-index:1}
+.cf .btn{background:var(--primary);color:#fff;padding:14px 32px;font-size:15px;font-weight:600;border-radius:var(--rs);display:inline-flex;position:relative;z-index:1;transition:background .2s}.cf .btn:hover{background:var(--primary-hover)}
+
+/* Footer */
+.ft{background:var(--text);color:#fff;padding:64px 0 28px}.ft-g{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;margin-bottom:40px}.ft-logo{font-family:var(--fd);font-size:18px;font-weight:700;color:var(--primary);margin-bottom:12px}.ft-tag{font-size:14px;color:rgba(255,255,255,.4);line-height:1.7;max-width:280px}.ft-ct{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:16px}.ft-lk{display:flex;flex-direction:column;gap:10px}.ft-lk a{font-size:14px;color:rgba(255,255,255,.55);transition:color .2s}.ft-lk a:hover{color:#fff}.ft-b{border-top:1px solid rgba(255,255,255,.06);padding-top:20px;display:flex;justify-content:space-between;align-items:center}.ft-c{font-size:12px;color:rgba(255,255,255,.2)}@media(max-width:768px){.ft-g{grid-template-columns:1fr;gap:28px}.ft-b{flex-direction:column;gap:12px;text-align:center}}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="ni">
+    <a href="index.html" class="nl">Body by Olga</a>
+    <div class="nk" id="nk">
+      <a href="index.html#method">The Method</a>
+      <a href="index.html#results">Results</a>
+      <a href="blog.html">Blog</a>
+      <a href="index.html#pricing" class="nc">Start Free Trial</a>
+      <a href="coaching.html" class="nq">Coaching</a>
+    </div>
+    <button class="nt" id="nt" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<section class="ch">
+  <div class="ctn">
+    <h1 class="r">For Women Who Want More Hands-On Support</h1>
+    <p class="r d1">Some women do great with the app alone. Some do better with personalized guidance, deeper accountability, and a closer coaching relationship.</p>
+    <p class="note r d2">If you want that level of support, this is the next step.</p>
+    <a href="#" class="btn r d3">Apply for 1:1 Coaching</a>
+  </div>
+</section>
+
+<section class="frame sp">
+  <div class="ctn">
+    <div class="frame-in r">
+      <h2>This isn't information you're missing.</h2>
+      <p>Most women who come to coaching already know what they should be doing. They've read the books. They've tried the programs.</p>
+      <p>The problem is never knowledge. It's the patterns underneath — the emotional eating, the all-or-nothing thinking, the shame loops that make consistency feel impossible.</p>
+      <p>Coaching is where we address that directly. Not with motivation speeches. With real tools, honest feedback, and a plan built around your actual life.</p>
+      <p class="em">"The goal is not to get you fired up for a day. It's to help you build repeatable behaviors."</p>
+    </div>
+  </div>
+</section>
+
+<section class="sp">
+  <div class="ctn">
+    <div class="cw">
+      <h2 class="r">Coaching is for women who want...</h2>
+      <div class="cw-g">
+        <div class="cw-c r">
+          <h4>More personalization</h4>
+          <p>Training and nutrition adjusted to your body, your schedule, your history. Not a template.</p>
+        </div>
+        <div class="cw-c r d1">
+          <h4>More accountability</h4>
+          <p>Regular check-ins with someone who knows your situation and won't let you disappear.</p>
+        </div>
+        <div class="cw-c r d2">
+          <h4>Deeper habit support</h4>
+          <p>Help with emotional eating, stress responses, and the patterns that keep showing up no matter what plan you follow.</p>
+        </div>
+        <div class="cw-c r d3">
+          <h4>A closer coaching relationship</h4>
+          <p>Someone who understands the problem fast, tells the truth without drama, and helps you move forward.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="chow sp">
+  <div class="ctn">
+    <h2 class="r">What Coaching Includes</h2>
+    <div class="chow-g">
+      <div class="chow-c r">
+        <div class="num">01</div>
+        <h4>Personalized Strength Plan</h4>
+        <p>Custom programming based on your level, equipment, and goals. Adjusted as you progress.</p>
+      </div>
+      <div class="chow-c r d1">
+        <div class="num">02</div>
+        <h4>Nutrition Strategy</h4>
+        <p>Food awareness work built around your real life — not calorie tracking, not rigid meal plans. Hunger skills, satiety, and better food decisions.</p>
+      </div>
+      <div class="chow-c r d2">
+        <div class="num">03</div>
+        <h4>Mindset & Behavior Coaching</h4>
+        <p>We address perfectionism, emotional eating triggers, self-sabotage, and the "I blew it" cycle. Practical tools, not vague positivity.</p>
+      </div>
+      <div class="chow-c r d3">
+        <div class="num">04</div>
+        <h4>Regular Check-Ins With Olga</h4>
+        <p>Consistent support, honest feedback, and adjustments as your life and body change. You're not doing this alone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sp">
+  <div class="ctn">
+    <div class="ct">
+      <h2 class="r">Coaching Results</h2>
+      <div class="ct-g">
+        <div class="ct-c r">
+          <p class="ct-q">"Olga helped me see patterns I couldn't see on my own. The emotional eating triggers were so obvious once she pointed them out."</p>
+          <p class="ct-a">Bonniejean, 54</p>
+          <p class="ct-d">Coaching client</p>
+        </div>
+        <div class="ct-c r d1">
+          <p class="ct-q">"For the first time in 20 years, I have a real relationship with food. Not a diet. A relationship. That shift changed everything."</p>
+          <p class="ct-a">Mika, 47</p>
+          <p class="ct-d">Coaching client</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cf sp">
+  <div class="ctn">
+    <div class="r">
+      <h2>Let's find a way that<br>actually works for you.</h2>
+      <p>No pressure. Just a conversation.</p>
+      <a href="#" class="btn">Apply for 1:1 Coaching</a>
+    </div>
+  </div>
+</section>
+
+<footer class="ft">
+  <div class="ctn">
+    <div class="ft-g">
+      <div><div class="ft-logo">Body by Olga</div><p class="ft-tag">Strength, food skills, and consistency for women 40+.</p></div>
+      <div><div class="ft-ct">Navigate</div><div class="ft-lk"><a href="index.html">Home</a><a href="blog.html">Blog</a><a href="index.html#results">Results</a><a href="index.html#pricing">Start Free Trial</a><a href="coaching.html">Coaching</a></div></div>
+      <div><div class="ft-ct">Connect</div><div class="ft-lk"><a href="https://www.instagram.com/olganoskov/" target="_blank" rel="noopener">Instagram</a><a href="#">YouTube</a><a href="mailto:hello@bodybyolga.app">hello@bodybyolga.app</a></div></div>
+    </div>
+    <div class="ft-b"><span class="ft-c">&copy; 2026 Body by Olga. All rights reserved.</span></div>
+  </div>
+</footer>
+
+<script>
+const o=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting)e.target.classList.add('v')})},{threshold:.08,rootMargin:'0px 0px -32px 0px'});document.querySelectorAll('.r').forEach(e=>o.observe(e));
+const n=document.getElementById('nav');addEventListener('scroll',()=>{n.classList.toggle('scrolled',scrollY>8)},{passive:true});
+document.getElementById('nt').addEventListener('click',()=>document.getElementById('nk').classList.toggle('open'));
+</script>
+</body>
+</html>
