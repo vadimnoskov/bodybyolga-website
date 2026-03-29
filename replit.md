@@ -52,15 +52,17 @@ Every package extends `tsconfig.base.json` which sets `composite: true`. The roo
 
 ### `artifacts/body-by-olga` (`@workspace/body-by-olga`)
 
-Body by Olga — a fully static React + Vite site for a women's fitness platform (40+). No backend needed.
+Body by Olga — a fully static **Astro** site for a women's fitness platform (40+). No backend needed.
 
-- **Pages**: Home (`/`), Coaching (`/coaching`), Blog (`/blog`), Blog Post (`/blog/:slug`)
-- **Design**: Warm Athletic design system (Playfair Display + DM Sans, #FF6A2B orange, #2F5D62 teal, #F7F4EF linen)
-- **Features**: 3D flip cards with hover/tap support, scroll reveal animations, sticky glassmorphism nav, blog category filtering
-- **Images**: All 14 hero/flip card images live in `public/images/`
-- **Styles**: Custom CSS (no Tailwind) in `src/styles.css`
+- **Framework**: Astro v5 with `@astrojs/mdx` and `@astrojs/sitemap`
+- **Pages**: `src/pages/index.astro` (home), `src/pages/coaching.astro`, `src/pages/blog/index.astro`, `src/pages/blog/[slug].astro`
+- **Blog content**: Markdown files in `src/content/blog/` using Astro content collections. Future-dated posts are excluded at build time.
+- **Design**: Warm Athletic design system (Playfair Display + DM Sans, #FF6A2B orange, #2F5D62 teal, #F7F4EF linen) in `src/styles/global.css`
+- **Features**: 3D flip cards with hover/tap support, scroll reveal animations, sticky glassmorphism nav, blog category filtering (JS), SEO component with OG/canonical
+- **Images**: All 14 hero/flip card/app images in `public/images/`
+- **CMS**: Decap CMS config in `public/admin/` (ready for GitHub backend, requires repo config)
+- **Deploy**: `netlify.toml` included for Netlify hosting
 - **Brand skill**: `.claude/skills/body-by-olga-brand/SKILL.md`
-- **Future**: Decap CMS integration for blog, GoHighLevel form integration for coaching apply
 
 ## Packages
 

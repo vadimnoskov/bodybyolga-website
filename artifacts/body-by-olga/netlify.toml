@@ -1,0 +1,11 @@
+[build]
+  command = "pnpm --filter @workspace/body-by-olga run build"
+  publish = "artifacts/body-by-olga/dist"
+
+[[redirects]]
+  from = "/admin"
+  to = "/admin/index.html"
+  status = 200
+
+[context.production]
+  environment = { NODE_VERSION = "20" }

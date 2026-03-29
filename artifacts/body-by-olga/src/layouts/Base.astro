@@ -1,0 +1,67 @@
+---
+import SEO from '../components/SEO.astro';
+
+export interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogImage?: string;
+  ogType?: 'website' | 'article';
+}
+
+const seoProps = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <SEO {...seoProps} />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+</head>
+<body>
+  <slot />
+  <script>
+    // Scroll reveal
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('v'); }),
+      { threshold: 0.12, rootMargin: '0px 0px -30px 0px' }
+    );
+    document.querySelectorAll('.r').forEach(el => observer.observe(el));
+
+    // Nav scroll state
+    const nav = document.querySelector('.nav');
+    if (nav) {
+      const updateNav = () => nav.classList.toggle('scrolled', window.scrollY > 8);
+      updateNav();
+      window.addEventListener('scroll', updateNav, { passive: true });
+    }
+
+    // Mobile nav toggle
+    const toggle = document.querySelector('.nt');
+    const links = document.querySelector('.nk');
+    if (toggle && links) {
+      toggle.addEventListener('click', () => links.classList.toggle('open'));
+      links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+    }
+
+    // Flip cards — hover on desktop, tap on mobile
+    const isMobile = () => window.innerWidth <= 1024;
+    document.querySelectorAll('.flip-card').forEach(card => {
+      let timer: ReturnType<typeof setTimeout>;
+      card.addEventListener('click', () => {
+        if (!isMobile()) return;
+        const wasTapped = card.classList.contains('tapped');
+        document.querySelectorAll('.flip-card.tapped').forEach(c => c.classList.remove('tapped'));
+        if (!wasTapped) {
+          card.classList.add('tapped');
+          clearTimeout(timer);
+          timer = setTimeout(() => card.classList.remove('tapped'), 3500);
+        }
+      });
+    });
+  </script>
+</body>
+</html>

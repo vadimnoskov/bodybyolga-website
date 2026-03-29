@@ -19,12 +19,8 @@ run = "pnpm --filter @workspace/body-by-olga run dev"
 
 [services.production]
 build = [ "pnpm", "--filter", "@workspace/body-by-olga", "run", "build" ]
-publicDir = "artifacts/body-by-olga/dist/public"
+publicDir = "artifacts/body-by-olga/dist"
 serve = "static"
-
-[[services.production.rewrites]]
-from = "/*"
-to = "/index.html"
 
 [services.env]
 PORT = "20728"

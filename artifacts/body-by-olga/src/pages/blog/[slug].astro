@@ -1,0 +1,57 @@
+---
+import Base from '../../layouts/Base.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+import '../../styles/global.css';
+
+export async function getStaticPaths() {
+  const today = new Date();
+  const posts = (await getCollection('blog'))
+    .filter(post => post.data.pubDate <= today);
+
+  return posts.map(post => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+const formatted = post.data.pubDate.toLocaleDateString('en-US', {
+  year: 'numeric', month: 'long', day: 'numeric',
+});
+---
+<Base
+  title={`${post.data.title} — Body by Olga`}
+  description={post.data.description}
+  canonical={`/blog/${post.slug}`}
+  ogType="article"
+>
+  <Nav activePage="blog" />
+
+  <div class="post-hero"></div>
+
+  <div class="post-container">
+    <div class="post-meta r">{post.data.category} · {formatted}</div>
+    <h1 class="post-title r d1">{post.data.title}</h1>
+    <p class="post-byline r d2">By {post.data.author} · Body by Olga</p>
+
+    <div class="post-content r d3">
+      <Content />
+    </div>
+
+    <div class="post-cta r">
+      <h3>Ready to put this into practice?</h3>
+      <p>Work directly with Olga and get a program built specifically for your body.</p>
+      <a href="/coaching">Apply for Coaching →</a>
+    </div>
+  </div>
+
+  <Footer />
+</Base>

@@ -1,0 +1,92 @@
+---
+import Base from '../../layouts/Base.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import { getCollection } from 'astro:content';
+import '../../styles/global.css';
+
+const today = new Date();
+
+// Filter out future-dated posts at build time
+const allPosts = (await getCollection('blog'))
+  .filter(post => post.data.pubDate <= today)
+  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+
+const categories = ['All', 'Workouts', 'Nutrition', 'Mindset'] as const;
+---
+<Base
+  title="Blog — Body by Olga"
+  description="Practical guides on strength training, nutrition, and mindset for women over 40."
+  canonical="/blog"
+>
+  <Nav activePage="blog" />
+
+  <div class="blog-hero">
+    <div class="ctn">
+      <h1 class="r">The Blog</h1>
+      <p class="r d1">Practical guides on strength, nutrition, and mindset — written for women over 40.</p>
+      <div class="blog-tags r d2">
+        {categories.map(cat => (
+          <button class={`blog-tag ${cat === 'All' ? 'active' : ''}`} data-cat={cat}>
+            {cat}
+          </button>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <div class="ctn">
+    <div class="blog-grid" id="blog-grid">
+      {allPosts.map(post => (
+        <a
+          href={`/blog/${post.slug}`}
+          class="blog-card"
+          data-category={post.data.category}
+        >
+          <div class="blog-card-img"></div>
+          <div class="blog-card-body">
+            <div class="blog-card-tag">{post.data.category}</div>
+            <h3>{post.data.title}</h3>
+            <p>{post.data.description}</p>
+            <span class="read-more">Read more <span class="arr">→</span></span>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <div class="blog-cta-bar r">
+      <p>Ready to stop guessing and start getting results?</p>
+      <a href="/coaching">Apply for 1:1 Coaching →</a>
+    </div>
+  </div>
+
+  <Footer />
+</Base>
+
+<script>
+  // Category filter — runs client-side
+  const tags = document.querySelectorAll<HTMLButtonElement>('.blog-tag');
+  const cards = document.querySelectorAll<HTMLElement>('.blog-card');
+
+  tags.forEach(tag => {
+    tag.addEventListener('click', () => {
+      const cat = tag.dataset.cat ?? 'All';
+
+      tags.forEach(t => t.classList.remove('active'));
+      tag.classList.add('active');
+
+      cards.forEach(card => {
+        const match = cat === 'All' || card.dataset.category === cat;
+        card.style.display = match ? '' : 'none';
+      });
+    });
+  });
+
+  // Set active from URL query param on load
+  const params = new URLSearchParams(window.location.search);
+  const initCat = params.get('category');
+  if (initCat) {
+    const matchTag = Array.from(tags).find(t => t.dataset.cat === initCat);
+    if (matchTag) matchTag.click();
+  }
+</script>

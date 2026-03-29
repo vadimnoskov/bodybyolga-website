@@ -1,0 +1,21 @@
+---
+export interface Props {
+  activePage?: string;
+}
+const { activePage = '' } = Astro.props;
+---
+<nav class="nav">
+  <div class="ni">
+    <a href="/" class="nl">Body by Olga</a>
+    <div class="nk">
+      <a href="/" class={activePage === 'home' ? 'active' : ''}>Home</a>
+      <a href="/coaching" class={activePage === 'coaching' ? 'active' : ''}>Coaching</a>
+      <a href="/blog" class={activePage === 'blog' ? 'active' : ''}>Blog</a>
+      <a href="/coaching" class="nq">Apply for coaching →</a>
+      <a href="/coaching" class="nc">Apply Now</a>
+    </div>
+    <button class="nt" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>

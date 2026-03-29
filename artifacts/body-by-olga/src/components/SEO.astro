@@ -1,0 +1,31 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogImage?: string;
+  ogType?: 'website' | 'article';
+}
+const {
+  title,
+  description,
+  canonical,
+  ogImage = '/images/hero-image.png',
+  ogType = 'website',
+} = Astro.props;
+const siteUrl = 'https://bodybyolga.app';
+const canonicalURL = canonical ? `${siteUrl}${canonical}` : siteUrl + Astro.url.pathname;
+---
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonicalURL} />
+<meta property="og:type" content={ogType} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={siteUrl + ogImage} />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:site_name" content="Body by Olga" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={siteUrl + ogImage} />
