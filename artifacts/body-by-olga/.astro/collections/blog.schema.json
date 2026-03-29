@@ -29,10 +29,9 @@
         "category": {
           "type": "string",
           "enum": [
-            "Training",
+            "Workouts",
             "Nutrition",
-            "Mindset",
-            "Perimenopause"
+            "Mindset"
           ]
         },
         "image": {

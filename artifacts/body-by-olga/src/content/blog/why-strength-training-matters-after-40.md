@@ -1,8 +1,8 @@
 ---
-title: "Why Strength Training After 40 Changes Everything"
+title: "Why Strength Training Matters More After 40"
 description: "The science behind why resistance training becomes non-negotiable for women in midlife — and how to start."
-pubDate: 2026-03-01
-category: Training
+pubDate: 2026-04-01
+category: Workouts
 image: ""
 draft: false
 ---

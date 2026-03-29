@@ -7,12 +7,11 @@ import '../../styles/global.css';
 
 const today = new Date();
 
-// Filter out future-dated and draft posts at build time
 const allPosts = (await getCollection('blog'))
   .filter(post => !post.data.draft && post.data.pubDate <= today)
   .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
 
-const categories = ['All', 'Training', 'Nutrition', 'Mindset', 'Perimenopause'] as const;
+const categories = ['All', 'Workouts', 'Nutrition', 'Mindset'] as const;
 ---
 <Base
   title="Blog — Body by Olga"
@@ -81,7 +80,6 @@ const categories = ['All', 'Training', 'Nutrition', 'Mindset', 'Perimenopause'] 
     });
   });
 
-  // Activate from URL query param on load
   const params = new URLSearchParams(window.location.search);
   const initCat = params.get('category');
   if (initCat) {

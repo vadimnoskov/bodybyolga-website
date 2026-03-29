@@ -6,7 +6,7 @@ const blog = defineCollection({
     title: z.string(),
     description: z.string(),
     pubDate: z.coerce.date(),
-    category: z.enum(['Training', 'Nutrition', 'Mindset', 'Perimenopause']),
+    category: z.enum(['Workouts', 'Nutrition', 'Mindset']),
     image: z.string().optional(),
     draft: z.boolean().default(false),
   }),

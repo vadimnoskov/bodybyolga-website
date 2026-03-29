@@ -1,8 +1,8 @@
 ---
 title: "How to Start Lifting Weights at 45"
 description: "A no-nonsense beginner's guide for women who've never touched a dumbbell — or haven't in years."
-pubDate: 2026-02-15
-category: Training
+pubDate: 2026-03-01
+category: Workouts
 image: ""
 draft: false
 ---
