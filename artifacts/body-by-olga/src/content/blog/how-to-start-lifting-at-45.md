@@ -1,9 +1,10 @@
 ---
 title: "How to Start Lifting Weights at 45"
 description: "A no-nonsense beginner's guide for women who've never touched a dumbbell — or haven't in years."
-pubDate: 2026-03-15
-category: Workouts
-author: Olga
+pubDate: 2026-02-15
+category: Training
+image: ""
+draft: false
 ---
 
 Forty-five years old. Never lifted a weight in your life — or maybe you did, once, and stopped. Either way, you're here now, and that's what matters.

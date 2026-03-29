@@ -7,74 +7,73 @@ import '../../styles/global.css';
 
 const today = new Date();
 
-// Filter out future-dated posts at build time
+// Filter out future-dated and draft posts at build time
 const allPosts = (await getCollection('blog'))
-  .filter(post => post.data.pubDate <= today)
+  .filter(post => !post.data.draft && post.data.pubDate <= today)
   .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
 
-const categories = ['All', 'Workouts', 'Nutrition', 'Mindset'] as const;
+const categories = ['All', 'Training', 'Nutrition', 'Mindset', 'Perimenopause'] as const;
 ---
 <Base
   title="Blog — Body by Olga"
-  description="Practical guides on strength training, nutrition, and mindset for women over 40."
+  description="The Strength After 40 Blog — evidence-based training, nutrition, and mindset for women who refuse to get weaker."
   canonical="/blog"
 >
-  <Nav activePage="blog" />
+  <Nav />
 
-  <div class="blog-hero">
+  <section class="blog-hero">
     <div class="ctn">
       <h1 class="r">The Blog</h1>
-      <p class="r d1">Practical guides on strength, nutrition, and mindset — written for women over 40.</p>
+      <p class="r d1">Evidence-based training, nutrition, and mindset for women who refuse to get weaker.</p>
       <div class="blog-tags r d2">
         {categories.map(cat => (
-          <button class={`blog-tag ${cat === 'All' ? 'active' : ''}`} data-cat={cat}>
+          <button class={`blog-tag${cat === 'All' ? ' active' : ''}`} data-cat={cat}>
             {cat}
           </button>
         ))}
       </div>
     </div>
-  </div>
+  </section>
 
-  <div class="ctn">
-    <div class="blog-grid" id="blog-grid">
-      {allPosts.map(post => (
-        <a
-          href={`/blog/${post.slug}`}
-          class="blog-card"
-          data-category={post.data.category}
-        >
-          <div class="blog-card-img"></div>
-          <div class="blog-card-body">
-            <div class="blog-card-tag">{post.data.category}</div>
-            <h3>{post.data.title}</h3>
-            <p>{post.data.description}</p>
-            <span class="read-more">Read more <span class="arr">→</span></span>
-          </div>
-        </a>
-      ))}
-    </div>
+  <section>
+    <div class="ctn">
+      <div class="blog-cta-bar r">
+        <p>New here? Start your 7-day free trial and train with me today.</p>
+        <a href="/#pricing" class="btn">Start Free Trial</a>
+      </div>
 
-    <div class="blog-cta-bar r">
-      <p>Ready to stop guessing and start getting results?</p>
-      <a href="/coaching">Apply for 1:1 Coaching →</a>
+      <div class="blog-grid" id="blog-grid">
+        {allPosts.map((post, i) => (
+          <a
+            href={`/blog/${post.slug}`}
+            class={`blog-card r${i % 2 === 1 ? ' d1' : ''}`}
+            data-category={post.data.category}
+          >
+            <div class="blog-card-img">{post.data.image ? <img src={post.data.image} alt={post.data.title} loading="lazy" /> : null}</div>
+            <div class="blog-card-body">
+              <div class="blog-card-tag">{post.data.category}</div>
+              <h3>{post.data.title}</h3>
+              <p>{post.data.description}</p>
+              <span class="read-more">Read more →</span>
+            </div>
+          </a>
+        ))}
+      </div>
     </div>
-  </div>
+  </section>
 
   <Footer />
 </Base>
 
 <script>
-  // Category filter — runs client-side
   const tags = document.querySelectorAll<HTMLButtonElement>('.blog-tag');
   const cards = document.querySelectorAll<HTMLElement>('.blog-card');
 
   tags.forEach(tag => {
     tag.addEventListener('click', () => {
       const cat = tag.dataset.cat ?? 'All';
-
       tags.forEach(t => t.classList.remove('active'));
       tag.classList.add('active');
-
       cards.forEach(card => {
         const match = cat === 'All' || card.dataset.category === cat;
         card.style.display = match ? '' : 'none';
@@ -82,7 +81,7 @@ const categories = ['All', 'Workouts', 'Nutrition', 'Mindset'] as const;
     });
   });
 
-  // Set active from URL query param on load
+  // Activate from URL query param on load
   const params = new URLSearchParams(window.location.search);
   const initCat = params.get('category');
   if (initCat) {

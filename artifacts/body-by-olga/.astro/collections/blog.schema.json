@@ -29,14 +29,18 @@
         "category": {
           "type": "string",
           "enum": [
-            "Workouts",
+            "Training",
             "Nutrition",
-            "Mindset"
+            "Mindset",
+            "Perimenopause"
           ]
         },
-        "author": {
-          "type": "string",
-          "default": "Olga"
+        "image": {
+          "type": "string"
+        },
+        "draft": {
+          "type": "boolean",
+          "default": false
         },
         "$schema": {
           "type": "string"

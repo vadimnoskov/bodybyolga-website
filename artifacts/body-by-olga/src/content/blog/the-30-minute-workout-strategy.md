@@ -1,9 +1,10 @@
 ---
 title: "The 30-Minute Workout Strategy"
 description: "Why less time in the gym leads to better results — especially for busy women over 40."
-pubDate: 2026-02-15
+pubDate: 2026-01-15
 category: Mindset
-author: Olga
+image: ""
+draft: false
 ---
 
 More is not better. Especially after 40. Especially for women juggling careers, families, and every other demand that doesn't pause so you can train.

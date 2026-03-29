@@ -1,9 +1,10 @@
 ---
 title: "Why Cardio Stops Working After 40"
 description: "You're running more and losing less. Here's what's actually happening — and what to do instead."
-pubDate: 2026-03-01
+pubDate: 2026-02-01
 category: Nutrition
-author: Olga
+image: ""
+draft: false
 ---
 
 You're doing everything right. Running more, eating less. And yet the scale isn't moving. Your energy is low. You feel worse, not better.

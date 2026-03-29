@@ -6,8 +6,9 @@ const blog = defineCollection({
     title: z.string(),
     description: z.string(),
     pubDate: z.coerce.date(),
-    category: z.enum(['Workouts', 'Nutrition', 'Mindset']),
-    author: z.string().default('Olga'),
+    category: z.enum(['Training', 'Nutrition', 'Mindset', 'Perimenopause']),
+    image: z.string().optional(),
+    draft: z.boolean().default(false),
   }),
 });
 

@@ -212,8 +212,8 @@ button{font-family:var(--fb);cursor:pointer;border:none}
 .ch h1{font-family:var(--fd);font-size:clamp(30px,4vw,42px);line-height:1.25;color:var(--text);margin-bottom:20px}
 .ch>p{font-size:17px;color:var(--text-s);line-height:1.75;margin-bottom:12px}
 .ch .note{font-size:15px;color:var(--text-m);font-style:italic;margin-bottom:32px}
-.ch .abtn{background:var(--accent);color:#fff;padding:14px 32px;font-size:15px;font-weight:600;border-radius:var(--rs);display:inline-flex;align-items:center;gap:8px;transition:background .2s}
-.ch .abtn:hover{background:var(--accent-hover)}
+.ch .btn{background:var(--accent);color:#fff;padding:14px 32px;font-size:15px;font-weight:600;border-radius:var(--rs);display:inline-flex;align-items:center;gap:8px;transition:background .2s}
+.ch .btn:hover{background:var(--accent-hover)}
 .frame{background:var(--bg-card);border-top:1px solid var(--border-l)}
 .frame-in{max-width:680px;margin:0 auto;text-align:center}
 .frame-in h2{font-family:var(--fd);font-size:28px;color:var(--text);margin-bottom:24px}
@@ -246,8 +246,8 @@ button{font-family:var(--fb);cursor:pointer;border:none}
 .cf::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:500px;height:500px;background:radial-gradient(circle,rgba(255,106,43,.08),transparent 70%)}
 .cf h2{font-family:var(--fd);font-size:clamp(26px,3vw,34px);color:#fff;margin-bottom:16px;position:relative;z-index:1}
 .cf p{font-size:16px;color:rgba(255,255,255,.6);margin-bottom:32px;position:relative;z-index:1}
-.cf .abtn{background:var(--primary);color:#fff;padding:14px 32px;font-size:15px;font-weight:600;border-radius:var(--rs);display:inline-flex;position:relative;z-index:1;transition:background .2s}
-.cf .abtn:hover{background:var(--primary-hover)}
+.cf .btn{background:var(--primary);color:#fff;padding:14px 32px;font-size:15px;font-weight:600;border-radius:var(--rs);display:inline-flex;position:relative;z-index:1;transition:background .2s}
+.cf .btn:hover{background:var(--primary-hover)}
 
 /* BLOG */
 .blog-hero{padding:120px 0 60px;text-align:center}

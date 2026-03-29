@@ -4,17 +4,17 @@ export interface Props {
 }
 const { activePage = '' } = Astro.props;
 ---
-<nav class="nav">
+<nav class="nav" id="nav">
   <div class="ni">
     <a href="/" class="nl">Body by Olga</a>
-    <div class="nk">
-      <a href="/" class={activePage === 'home' ? 'active' : ''}>Home</a>
-      <a href="/coaching" class={activePage === 'coaching' ? 'active' : ''}>Coaching</a>
-      <a href="/blog" class={activePage === 'blog' ? 'active' : ''}>Blog</a>
-      <a href="/coaching" class="nq">Apply for coaching →</a>
-      <a href="/coaching" class="nc">Apply Now</a>
+    <div class="nk" id="nk">
+      <a href="/#method">The Method</a>
+      <a href="/#results">Results</a>
+      <a href="/blog" style={activePage === 'blog' ? 'color:var(--text)' : ''}>Blog</a>
+      <a href="/#pricing" class="nc">Start Free Trial</a>
+      <a href="/coaching" class="nq">Coaching</a>
     </div>
-    <button class="nt" aria-label="Open menu">
+    <button class="nt" id="nt" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
   </div>

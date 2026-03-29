@@ -8,7 +8,7 @@ import '../../styles/global.css';
 export async function getStaticPaths() {
   const today = new Date();
   const posts = (await getCollection('blog'))
-    .filter(post => post.data.pubDate <= today);
+    .filter(post => !post.data.draft && post.data.pubDate <= today);
 
   return posts.map(post => ({
     params: { slug: post.slug },
@@ -32,26 +32,29 @@ const formatted = post.data.pubDate.toLocaleDateString('en-US', {
   description={post.data.description}
   canonical={`/blog/${post.slug}`}
   ogType="article"
+  ogImage={post.data.image || '/images/hero-image.png'}
 >
-  <Nav activePage="blog" />
+  <Nav />
 
-  <div class="post-hero"></div>
+  <div class="post-hero">
+    {post.data.image ? <img src={post.data.image} alt={post.data.title} style="width:100%;height:100%;object-fit:cover" /> : null}
+  </div>
 
-  <div class="post-container">
+  <article class="post-container">
     <div class="post-meta r">{post.data.category} · {formatted}</div>
     <h1 class="post-title r d1">{post.data.title}</h1>
-    <p class="post-byline r d2">By {post.data.author} · Body by Olga</p>
+    <p class="post-byline r d2">By Olga · Body by Olga</p>
 
     <div class="post-content r d3">
       <Content />
     </div>
 
     <div class="post-cta r">
-      <h3>Ready to put this into practice?</h3>
-      <p>Work directly with Olga and get a program built specifically for your body.</p>
-      <a href="/coaching">Apply for Coaching →</a>
+      <h3>Ready to build strength after 40?</h3>
+      <p>Start your free trial and train with me today.</p>
+      <a href="/#pricing" class="btn">Start Free Trial</a>
     </div>
-  </div>
+  </article>
 
   <Footer />
 </Base>
