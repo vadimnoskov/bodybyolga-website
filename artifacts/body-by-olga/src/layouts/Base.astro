@@ -20,7 +20,21 @@ const seoProps = Astro.props;
   <SEO {...seoProps} />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
+
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+
 <body>
   <slot />
   <script src="../scripts/main.js"></script>
