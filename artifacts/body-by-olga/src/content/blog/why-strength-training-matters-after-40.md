@@ -1,7 +1,8 @@
 ---
-title: "Why Strength Training Matters More After 40"
-description: "The science behind why resistance training becomes non-negotiable for women in midlife — and how to start."
-pubDate: 2026-04-01
+title: Why Strength Training Matters More After 40
+description: The science behind why resistance training becomes non-negotiable
+  for women in midlife — and how to start.
+pubDate: 2026-03-30T20:00:00.000-04:00
 category: Workouts
 image: ""
 draft: false
