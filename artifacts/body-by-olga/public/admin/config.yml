@@ -3,13 +3,13 @@ backend:
   branch: main
   site_url: https://bodybyolga.netlify.app
 
-media_folder: public/images/blog
+media_folder: artifacts/body-by-olga/public/images/blog
 public_folder: /images/blog
 
 collections:
   - name: blog
     label: Blog Posts
-    folder: src/content/blog
+    folder: artifacts/body-by-olga/src/content/blog
     create: true
     slug: "{{slug}}"
     fields:
