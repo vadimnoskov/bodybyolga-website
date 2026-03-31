@@ -36,9 +36,6 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 document.querySelectorAll('.flip-card').forEach(card => {
   card.addEventListener('click', function () {
     if (window.innerWidth <= 1024) {
-      document.querySelectorAll('.flip-card.tapped').forEach(c => {
-        if (c !== this) c.classList.remove('tapped');
-      });
       this.classList.toggle('tapped');
     }
   });
