@@ -32,11 +32,10 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 
-// Mobile flip card tap support
+// Mobile flip card tap support (touchend + preventDefault blocks ghost click)
 document.querySelectorAll('.flip-card').forEach(card => {
-  card.addEventListener('click', function () {
-    if (window.innerWidth <= 1024) {
-      this.classList.toggle('tapped');
-    }
-  });
+  card.addEventListener('touchend', function (e) {
+    e.preventDefault();
+    this.classList.toggle('tapped');
+  }, { passive: false });
 });
